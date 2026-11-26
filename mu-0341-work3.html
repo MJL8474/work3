@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>静夜灯下分享会 · Night Lamp Sharing</title>
+<style>
+/* ============================================================
+   work3：在 html 中插入 CSS 样式
+   学号末位 1 → 主题：静夜灯下分享会 · Night Lamp Sharing
+   背景色：薄荷牛奶绿 #E8FFF4
+   ============================================================ */
+
+/* ---------- 页面底色（让 .page 居中显示） ---------- */
+body{
+    margin:0;
+    padding:40px 16px;
+    background-color:#0f1c17;
+    color:#22322b;
+    font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif;
+    line-height:1.85;
+    text-align:center;          /* 配合 .page 的 inline-block 居中 */
+}
+
+/* ---------- 作业要求③：.page 样式 ----------
+   除 background-color 的值以外，其他属性均不可修改 */
+.page{
+    display:inline-block;
+    background-color:#E8FFF4;        /* 学号末位 1：薄荷牛奶绿 */
+    box-shadow:0 0 30px rgba(80,58,35,0.25);
+    text-align:left;
+    max-width:720px;
+}
+
+/* ---------- 作业要求⑤③：并集选择器（一次给 h1~h6 统一风格） ---------- */
+h1,h2,h3,h4,h5,h6{
+    font-family:"Microsoft YaHei",sans-serif;
+    color:#12352a;
+    margin:0 0 12px 0;
+    line-height:1.45;
+}
+
+h1{
+    font-size:30px;
+    letter-spacing:2px;
+    text-align:center;
+    padding:34px 32px 4px 32px;
+    border-bottom:2px solid #47a37b;
+}
+h2{
+    font-size:21px;
+    border-left:6px solid #47a37b;
+    padding-left:12px;
+}
+h3{
+    font-size:18px;
+    color:#2c6b52;
+    margin-top:4px;
+}
+
+/* ---------- 五个区域的外框（.page 的直接子 div） ---------- */
+.page > div{
+    padding:20px 32px;
+    border-bottom:1px dashed #b7e0cd;
+}
+
+/* ---------- 正文段落 ---------- */
+p{
+    margin:12px 0;
+    font-size:15px;
+    color:#2b3d35;
+}
+
+/* ---------- 作业要求⑤④：ID 选择器 p#intro（重要提示要强调） ---------- */
+p#intro{
+    font-size:16px;
+    font-weight:bold;
+    color:#b45309;
+    background-color:#fff4e0;
+    border-left:6px solid #f0a500;
+    padding:12px 16px;
+    border-radius:4px;
+}
+
+/* ---------- 作业要求⑤⑥：伪元素 p::first-letter ---------- */
+p::first-letter{
+    font-size:26px;
+    font-weight:bold;
+    color:#1f7a5a;
+    margin-right:2px;
+}
+
+/* ---------- 作业要求⑤⑥：伪元素 div::first-line ---------- */
+div::first-line{
+    letter-spacing:0.6px;
+    color:#3a4a42;
+}
+
+/* ---------- 表格 ---------- */
+table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    background-color:#ffffff;
+    margin-top:10px;
+}
+
+th,td{
+    border:1px solid #9ccfb5;
+    padding:9px 10px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+th{
+    background-color:#cdeedd;
+    color:#12352a;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+tr:nth-child(even) td{
+    background-color:#f6fffb;
+}
+
+tr:hover td{
+    background-color:#e0f7ec;
+}
+
+/* ---------- 作业要求⑤②：链接伪类 ---------- */
+a:link{
+    color:#1f7a5a;
+    text-decoration:none;
+    border-bottom:1px dotted #1f7a5a;
+}
+a:visited{
+    color:#6b5f8a;
+    border-bottom:1px dotted #6b5f8a;
+}
+a:hover{
+    color:#a16207;
+    background-color:#fff3d6;
+    border-bottom:1px solid #a16207;
+}
+a:active{
+    color:#b91c1c;
+    border-bottom:1px solid #b91c1c;
+}
+
+/* ---------- 作业要求⑤⑤：带类名的链接 ---------- */
+a.red{
+    color:#c0392b;
+    font-weight:bold;
+    font-size:16px;
+    margin-right:28px;
+    border-bottom:2px solid #c0392b;
+}
+a.blue{
+    color:#1d4ed8;
+    font-weight:bold;
+    font-size:16px;
+    border-bottom:2px solid #1d4ed8;
+}
+a.red:hover{
+    color:#ffffff;
+    background-color:#c0392b;
+}
+a.blue:hover{
+    color:#ffffff;
+    background-color:#1d4ed8;
+}
+
+/* ---------- 作业要求⑤①：后代选择器 div table a ----------
+   只有「div 里的 table 里的超链接」才会套用这套样式 */
+div table a{
+    color:#0f6b4f;
+    font-weight:bold;
+    text-decoration:underline;
+    letter-spacing:0.5px;
+    border-bottom:none;
+}
+div table a:hover{
+    color:#b45309;
+    text-decoration:none;
+}
+
+/* ---------- 作业要求④⑤：底部公告区 ---------- */
+.notice{
+    background-color:#d9f7ea;
+    border-top:3px solid #47a37b;
+    font-size:14px;
+    color:#33544a;
+    padding:22px 32px 26px 32px;
+}
+.notice p{
+    margin:8px 0;
+    font-size:14px;
+    color:#33544a;
+}
+.notice p::first-letter{
+    font-size:15px;
+    color:#1f7a5a;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- ========== ① 顶部标题区 ========== -->
+    <div>
+        <h1>静夜灯下分享会 · Night Lamp Sharing</h1>
+    </div>
+
+    <!-- ========== ② 活动介绍区 ========== -->
+    <div>
+        <h2 id="intro">灯下读一页，分享一段夜色</h2>
+
+        <p>周五的夜晚，图书馆三楼的灯会一直亮到九点。我们把顶灯调暗，把桌上的小台灯拧到最舒服的那一档，
+           围坐成一圈，读各自带来的那一页。</p>
+
+        <p>分享不追求「读完」，也不追求「读懂」——只讲你今晚在书页里停下来的那一段：一句让你忽然走神的句子，
+           一个让你想起某个人的人物，或者一处你到现在还没想明白的地方。</p>
+
+        <p id="intro">重要提示：活动在室内进行，请自带一盏小灯（或暖光台灯）；席位限 20 人，
+           报名成功后以短信确认为准，请务必填写可联系的手机号码。</p>
+    </div>
+
+    <!-- ========== ③ 活动报名信息表格区 ========== -->
+    <div>
+        <h3>本期分享席位与分享主题</h3>
+
+        <table>
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>联系方式</th>
+                <th>分享主题</th>
+                <th>席位状态</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td><a href="Mu-0341-work2.html">林知夏</a></td>
+                <td>138****0021</td>
+                <td>《夜航西飞》：写给远方的信</td>
+                <td>已确认席位</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td><a href="Mu-0341-work2.html">周也</a></td>
+                <td>139****0123</td>
+                <td>《人间草木》：汪曾祺的四季</td>
+                <td>待确认</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td><a href="Mu-0341-work2.html">Sofia</a></td>
+                <td>137****0456</td>
+                <td>Night Lamp：我的英文夜读习惯</td>
+                <td>已确认席位</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>陈小满</td>
+                <td>136****0789</td>
+                <td>《小王子》：驯养与被驯养</td>
+                <td>候补名单</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ========== ④ 页面链接区 ========== -->
+    <div>
+        <div>
+            <a class="red" href="Mu-0341-work2.html#show">查看往期活动照片</a>
+            <a class="blue" href="Mu-0341-work2.html#form">在线咨询活动详情</a>
+        </div>
+    </div>
+
+    <!-- ========== ⑤ 底部公告区 ========== -->
+    <div class="notice">
+        <p>活动时间：本周五 19:30 — 21:00，<br>
+           活动地点：图书馆三楼静室（东侧楼梯上行）。</p>
+
+        <p>请自带一盏小灯或暖光台灯，<br>
+           场地提供插座、热水与简易坐垫。</p>
+
+        <p>席位限 20 人，报满即止；<br>
+           请提前十分钟入场，并把手机调至静音。</p>
+    </div>
+
+</div>
+
+</body>
+</html>
